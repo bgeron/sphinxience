@@ -1,0 +1,7 @@
+README.md
+setup.py
+sphinxience/__init__.py
+sphinxience.egg-info/PKG-INFO
+sphinxience.egg-info/SOURCES.txt
+sphinxience.egg-info/dependency_links.txt
+sphinxience.egg-info/top_level.txt
