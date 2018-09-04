@@ -20,4 +20,4 @@ def setup(app):
     for submodule in SUBMODULES:
         app.setup_extension("sphinxience.{}".format(submodule))
 
-    return {'version': '0.1.2', "parallel_read_safe": True}
+    return {'version': __version__, "parallel_read_safe": True}
