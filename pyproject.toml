@@ -23,8 +23,10 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.0"
 Sphinx = "~1.7"
+alabaster = "~0.7"
 
 [tool.poetry.dev-dependencies]
 # pytest = "^3.0"
 
-
+[tool.poetry.plugins."sphinx.html_themes"]
+sphinxience = "sphinxience"
