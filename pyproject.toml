@@ -26,7 +26,8 @@ Sphinx = "~1.7"
 alabaster = "~0.7"
 
 [tool.poetry.dev-dependencies]
-# pytest = "^3.0"
+pytest = "^3.0"
+tomlkit = "^0.4"
 
 [tool.poetry.plugins."sphinx.html_themes"]
 sphinxience = "sphinxience"
