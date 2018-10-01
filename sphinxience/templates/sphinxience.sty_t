@@ -19,23 +19,7 @@
 % use \sphinxdeprecationwarning earlier, and it needs \ltx@ifundefined)
 \RequirePackage{ltxcmds}
 
-% make commands known to non-Sphinx document classes
-\providecommand*{\sphinxtableofcontents}{\tableofcontents}
-\ltx@ifundefined{sphinxthebibliography}
- {\newenvironment
-  {sphinxthebibliography}{\begin{thebibliography}}{\end{thebibliography}}%
- }
- {}% else clause of \ltx@ifundefined
-\ltx@ifundefined{sphinxtheindex}
- {\newenvironment{sphinxtheindex}{\begin{theindex}}{\end{theindex}}}%
- {}% else clause of \ltx@ifundefined
-
-% for usage with xindy: this string gets internationalized in preamble
-\newcommand*{\sphinxnonalphabeticalgroupname}{}
-% redefined in preamble, headings for makeindex produced index
-\newcommand*{\sphinxsymbolsname}{}
-\newcommand*{\sphinxnumbersname}{}
-
+\newcommand{\sphinxtableofcontents}{\tableofcontents}
 \newcommand\release[1]{}
 \newcommand\releasename{}
 
@@ -825,21 +809,6 @@
 
 
 
-
-
-
-% Cannot include hyperref here, because entcs already includes it.
-
-%% Include hyperref last.
-%% \RequirePackage[colorlinks,breaklinks,
-%%                 linkcolor=InnerLinkColor,filecolor=OuterLinkColor,
-%%                 menucolor=OuterLinkColor,urlcolor=OuterLinkColor,
-%%                 citecolor=InnerLinkColor]{hyperref}
-% Fix anchor placement for figures with captions.
-% (Note: we don't use a package option here; instead, we give an explicit
-% \capstart for figures that actually have a caption.)
-\RequirePackage{hypcap}
-
 %% FROM DOCTUTILS LATEX WRITER
 %
 % The following is stuff copied from docutils' latex writer.
@@ -1014,7 +983,7 @@
 %
 \newenvironment{sphinxthebibliography}[1]{%
   % \phantomsection % not needed here since TeXLive 2010's hyperref
-  \begin{thebibliography}{1}%
+  \begin{thebibliography}{#1}%
   \addcontentsline{toc}{section}{\ifdefined\refname\refname\else\ifdefined\bibname\bibname\fi\fi}}{\end{thebibliography}}
 
 
