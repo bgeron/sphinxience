@@ -1,4 +1,4 @@
-__version_tuple__ = (0, 2, 2)
+__version_tuple__ = (0, 3, 1)
 __version__ = '.'.join(map(str, __version_tuple__))
 __version_date_latex__ = "2018/09/30" # in LaTeX format
 
