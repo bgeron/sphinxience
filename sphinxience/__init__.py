@@ -12,7 +12,7 @@ from sphinx.util.fileutil import copy_asset_file
 SUBMODULES = ["skip"]
 
 ASSET_FILES = [
-    "sphinxience.cls_t",
+    "sphinxience-article.cls_t",
     "sphinxience.sty_t",
 ]
 
