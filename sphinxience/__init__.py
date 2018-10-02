@@ -9,7 +9,10 @@ from os import path
 from sphinx.locale import __
 from sphinx.util.fileutil import copy_asset_file
 
-SUBMODULES = ["skip"]
+SUBMODULES = [
+    "collapse",
+    "skip",
+]
 
 ASSET_FILES = [
     "sphinxience-article.cls_t",
