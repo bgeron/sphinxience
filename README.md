@@ -45,6 +45,8 @@ This works:
 
     (The `big` size corresponds to a LaTeX `\bigskip`.)
 
+-   A `collapse` directive that shows its contents collapsed but expandable in HTML, and a placeholder in LaTeX.
+
 This is still to do:
 
 -   Come up with a good way to write preambles for both the HTML and the LaTeX output. (In my PhD thesis, I have a rather hacky mechanism.)
