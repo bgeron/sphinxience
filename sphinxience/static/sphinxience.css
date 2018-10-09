@@ -1,5 +1,41 @@
 @import url("alabaster.css");
 
+/* Overrides on alabaster to make the space between the sidebar and the main
+ * content bigger */
+
+div.bodywrapper {
+    margin-right: 235px;
+}
+@media screen and (max-width: 870px) {
+    div.bodywrapper {
+        margin: 0;
+        margin-right: 0;
+    }
+}
+
+div.sphinxsidebar {
+    width: 235px;
+}
+@media screen and (max-width: 870px) {
+    div.sphinxsidebar {
+        width: 102.5%;
+    }
+}
+
+div.document, div.footer {
+    width: 1010px;
+}
+@media screen and (max-width: 870px) {
+    div.document, div.footer {
+        width: auto;
+    }
+}
+
+div.sphinxsidebarwrapper {
+    padding: 18px 10px;
+    padding-right: 25px;
+}
+
 div.sphinxience-skip-big {
     height: .5rem;
     margin: 1rem 0rem;
