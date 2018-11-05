@@ -11,18 +11,17 @@ from docutils.nodes import paragraph, emphasis
 import docutils.parsers.rst.directives.admonitions
 from docutils.parsers.rst import Directive, directives
 from docutils.parsers.rst.roles import set_classes
-from . import latex_is_active, logger, package_dir
+from . import html_is_active, package_dir, _copy_asset_files
 from os import path
 from sphinx.locale import __
-from sphinx.util.fileutil import copy_asset_file
 
 
 CSS_FILES = [
     "collapse-details-polyfill.css",
 ]
 JS_FILES = [
-    "jquery.details.min.js",
     "collapse-details-polyfill.js",
+    "jquery.details.min.js",
 ]
 
 " ------- SETUP ------ "
@@ -65,14 +64,12 @@ def on_builder_inited(app):
         app.add_javascript(js)
 
 def on_build_finished(app, exc):
-    # Copy static files for LaTeX after the rest of the build process is done.
+    # Copy static files for HTML after the rest of the build process is done.
 
-    if exc is None and latex_is_active(app):
-        for file in CSS_FILES + JS_FILES:
-            src = path.join(package_dir, 'static', file)
-            dest = path.join(app.outdir, '_static')
-            logger.info(__("Copying file %s into %s" % (src, dest)))
-            copy_asset_file(src, dest)
+    if exc is None and html_is_active(app):
+        context = dict()
+        _copy_asset_files(app, JS_FILES + CSS_FILES,
+            ['static'], ['_static'], context)
 
 " ------- NODES ------ "
 

@@ -60,3 +60,10 @@ This is still to do:
 
 The code here should work and be reasonable clean, but it could e.g. use a linter to catch unused imports. Patches are welcome! Also if you developed a new directive or role.
 
+## Code organisation
+
+Sphinxience contains both a theme called ``sphinxience`` and an extension called ``sphinxience``. The theme provides some defaults that work better for science. The extension provides roles and directives.
+
+- ``static/`` contains CSS for the HTML part of the theme.
+- ``templates/`` contains CSS and JS for the extension, and a LaTeX class and package for the theme.
+- The root directory inside ``sphinxience/`` contains Python modules, and the theme ``layout.html``.
